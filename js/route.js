@@ -8,22 +8,10 @@ document.addEventListener("click", (e) => {
 });
 
 const urlRoutes = {
-  404: {
-    template: "/pages/404.html",
-    description: "Page not found",
-  },
-  "/": {
-    template: "/pages/index.html",
-    description: "This is the home page",
-  },
-  "/login": {
-    template: "/pages/login.html",
-    description: "This is the about page",
-  },
-  "/help": {
-    template: "/pages/help.html",
-    description: "This is the contact page",
-  },
+  404: "/pages/404.html",
+  "/": "/pages/index.html",
+  "/login": "/pages/login.html",
+  "/help": "/pages/help.html",
 };
 
 const urlRoute = (event) => {
@@ -39,11 +27,8 @@ const urlLocationHandler = async () => {
     location = "/";
   }
   const route = urlRoutes[location] || urlRoutes["404"];
-  const html = await fetch(route.template).then((response) => response.text());
-  document.querySelector(".section-login").innerHTML = html;
-  document
-    .querySelector('meta[name="description"]')
-    .setAttribute("content", route.description);
+  const html = await fetch(route).then((response) => response.text());
+  document.getElementById("section-login").innerHTML = html;
 };
 
 window.onpopstate = urlLocationHandler;
