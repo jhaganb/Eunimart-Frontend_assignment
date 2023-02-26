@@ -150,3 +150,19 @@ body {
   border-radius: 0.7rem;
   border: none;
 }
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.error {
+  position: absolute;
+  width: 440px;
+  height: 341px;
+  left: 500px;
+  top: 152px;
+
+  background: #ffffff;
+  box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+}
