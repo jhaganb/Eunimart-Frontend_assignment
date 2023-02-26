@@ -73,3 +73,7 @@ body {
 .header_link-help--active {
   border-bottom: 0.2rem solid var(--color-primary);
 }
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
